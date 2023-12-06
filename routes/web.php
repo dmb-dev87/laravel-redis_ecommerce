@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/products/all', [App\Http\Controllers\ProductController::class, 'list'])->name('product.all');
+Route::get('/products/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product.new');
+Route::post('/products/create', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+
+Route::get('/blogs/{id}', [App\Http\Controllers\BlogController::class, 'index']);
+Route::post('/blogs/update/{id}', [App\Http\Controllers\ProductController::class, 'update']);
+Route::delete('/blogs/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
